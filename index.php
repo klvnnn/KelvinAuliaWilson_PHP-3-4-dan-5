@@ -35,7 +35,7 @@ $conn = mysqli_connect('localhost','root','','arkatama_store')
         <ul>
           <li><a href="#hero">Home</a></li>
           <li><a href="#categories">Categories</a></li>
-          <li><a href="products.php"> All Products</a></li>
+          <li><a href="products.php">Products</a></li>
         </ul>
       </nav><!-- .navbar -->
     </div>
@@ -128,6 +128,12 @@ $conn = mysqli_connect('localhost','root','','arkatama_store')
                     </div>
                 </div>
                 <div class="mb-3">
+                    <label class="form-label" for="Name"><b>Create_at</b></label>
+                    <div class="controls">
+                        <input type="datetime" name="create_at"  class="form-control form Button-Up" required>
+                    </div>
+                </div>
+                <div class="mb-3">
                     <div class="controls mt-3">
                         <button type="submit" name="submitt"class="btn btn-primary">Add Categories</button>
                     </div>
@@ -137,9 +143,10 @@ $conn = mysqli_connect('localhost','root','','arkatama_store')
           <?php
             if (isset($_POST['submitt'])){
               $name=$_POST['name'];
+              $create=$_POST['create_at'];
   
-              $sql1=" INSERT into categories (name) 
-                      values ('$name')";
+              $sql1=" INSERT into categories (name, created_at) 
+                      values ('$name','$create')";
               $result=$conn->query($sql1);
             }
           ?>

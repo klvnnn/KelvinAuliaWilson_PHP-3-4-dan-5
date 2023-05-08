@@ -30,15 +30,15 @@ $conn = mysqli_connect('localhost','root','','arkatama_store');
         <nav id="navbar" class="navbar">
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="#products"> All Products</a></li>
-            <li><a href="stocks.php"> Stok Product</a></li>
+            <li><a href="products.php"> All Products</a></li>
+            <li><a href="#stocks"> Stok Product</a></li>
         </ul>
         </nav><!-- .navbar -->
     </div>
     </header><!-- End Header -->
     <main id="main">
     <!-- ======= About Section ======= -->
-    <section id="products" class="about">
+    <section id="stocks" class="about">
     <div class="container" data-aos="fade-up">
         <div class="row">
             <div class="span9">
@@ -48,7 +48,7 @@ $conn = mysqli_connect('localhost','root','','arkatama_store');
                         products.created_at, products.updated_at, products.created_by, products.verified_at, products.verified_by 
                         FROM products
                         JOIN categories ON products.category_id = categories.id
-                        ;";
+                        LIMIT 30;";
                 $result=$conn->query($sq1);
             ?>
             <table class="table" id = "tables">
@@ -103,59 +103,6 @@ $conn = mysqli_connect('localhost','root','','arkatama_store');
             </table>
             </div>
         </div>
-        <form class="form-horizontal row-fluid" action="createproduct.php" method="post">
-            <div class="control-group">
-                <div class="mb-3">
-                    <label class="form-label" for="Categories"><b>Pilih Kategori</b></label>
-                    <select class="form-select" aria-label="Default select example" name="catID" required="">
-                        <option disabled="" selected=""> Select Categori</option>
-                            <option value="1">Shoes</option>
-                            <option value="2">Meja</option>
-                            <option value="3">Mobil</option>
-                            <option value="4">Jam tangan</option>
-                            <option value="5">Mouse</option>
-                            <option value="6">Motorcycle</option>
-                            <option value="7">Arsitektur</option>
-                            <option value="8">School</option>
-                            <option value="9">Furniture</option>
-                            <option value="10">Technoloy</option>
-                        </select>
-                        <br>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="name"><b>Name Products</b></label>
-                    <div class="controls">
-                        <input type="text" name="name"  class="form-control form Button-Up" required>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="description"><b>Description</b></label>
-                    <div class="controls">
-                        <input type="text" name="description"  class="form-control form Button-Up" required>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="price"><b>Price</b></label>
-                    <div class="controls">
-                        <input type="number" name="price"  class="form-control form Button-Up" required>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="Status"><b>Status</b></label>
-                    <select class="form-select" aria-label="Default select example" name="status" required="">
-                        <option disabled="" selected=""> Select Status</option>
-                        <option value="acepted">accepted</option>
-                        <option value="waiting">waiting</option>
-                        <option value="rejected">rejected</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <div class="controls mt-3">
-                        <button type="submit" name="add" class="btn btn-primary">Add Products</button>
-                    </div>
-                </div>
-            </div>
-        </form>
         </div>
     </section>
     </main><!-- End #main -->
