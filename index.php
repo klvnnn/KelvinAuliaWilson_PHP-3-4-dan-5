@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost','root','','arkatama_store')
+include_once "koneksi.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@ $conn = mysqli_connect('localhost','root','','arkatama_store')
     <meta content="" name="description">
     <meta content="" name="keywords">
     <!-- Favicons -->
-    <link href="assets/img/icon.png" rel="icon">
+    <link href="assets/img/icon.png" rel="icon" type="image/x-icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,11 +36,12 @@ $conn = mysqli_connect('localhost','root','','arkatama_store')
           <li><a href="#hero">Home</a></li>
           <li><a href="#categories">Categories</a></li>
           <li><a href="products.php">Products</a></li>
+          <li><a href="users.php">Users</a></li>
         </ul>
-      </nav><!-- .navbar -->
+      </nav>
     </div>
-  </header><!-- End Header -->
-  <!-- ======= Hero Section ======= -->
+  </header>
+  <!-- ======= Homepage Section ======= -->
   <section id="hero" class="hero d-flex align-items-center section-bg">
     <div class="container">
       <div class="row justify-content-between gy-5">
@@ -53,9 +54,9 @@ $conn = mysqli_connect('localhost','root','','arkatama_store')
         </div>
       </div>
     </div>
-  </section><!-- End Hero Section -->
+  </section>
   <main id="main">
-    <!-- ======= About Section ======= -->
+    <!-- ======= Categories Section ======= -->
     <section id="categories" class="about">
       <div class="container" data-aos="fade-up">
         <div class="row">
@@ -118,6 +119,8 @@ $conn = mysqli_connect('localhost','root','','arkatama_store')
             </table>
             </div>
           </div>
+          <br> 
+          <h5><b>Add Categories</b></h5>
           <br>
           <form class="form-horizontal row-fluid" action="" method="post">
             <div class="control-group">
@@ -130,7 +133,7 @@ $conn = mysqli_connect('localhost','root','','arkatama_store')
                 <div class="mb-3">
                     <label class="form-label" for="Name"><b>Create_at</b></label>
                     <div class="controls">
-                        <input type="datetime" name="create_at"  class="form-control form Button-Up" required>
+                        <input type="date" name="create_at"  class="form-control form Button-Up" required>
                     </div>
                 </div>
                 <div class="mb-3">
@@ -167,8 +170,8 @@ $conn = mysqli_connect('localhost','root','','arkatama_store')
           <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
         </div>
     </div>
-  </footer><!-- End Footer -->
-  <!-- End Footer -->
+  </footer>
+  <!-- ===== Footer ===== -->
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
   <!-- Vendor JS Files -->

@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost','root','','arkatama_store');
+include_once "koneksi.php";
 if (isset($_POST['add']))
 {   
     $catID=$_POST['catID'];

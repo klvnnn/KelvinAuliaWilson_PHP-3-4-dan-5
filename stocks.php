@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost','root','','arkatama_store');
+include_once "koneksi.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,11 +33,11 @@ $conn = mysqli_connect('localhost','root','','arkatama_store');
             <li><a href="products.php"> All Products</a></li>
             <li><a href="#stocks"> Stok Product</a></li>
         </ul>
-        </nav><!-- .navbar -->
+        </nav>
     </div>
-    </header><!-- End Header -->
+    </header>
     <main id="main">
-    <!-- ======= About Section ======= -->
+    <!-- ======= Stocks Section ======= -->
     <section id="stocks" class="about">
     <div class="container" data-aos="fade-up">
         <div class="row">
@@ -105,7 +105,8 @@ $conn = mysqli_connect('localhost','root','','arkatama_store');
         </div>
         </div>
     </section>
-    </main><!-- End #main -->
+    </main>
+    <!-- ===== Footer ===== -->
     <footer id="footer" class="footer">
     <div class="container">
         <div class="copyright">
@@ -119,8 +120,8 @@ $conn = mysqli_connect('localhost','root','','arkatama_store');
             <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
         </div>
     </div>
-    </footer><!-- End Footer -->
-    <!-- End Footer -->
+    </footer>
+    <!-- End Content ===== -->
     <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     <div id="preloader"></div>
     <!-- Vendor JS Files -->
