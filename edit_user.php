@@ -84,19 +84,17 @@ if(isset($_POST['update']))
                             <?php
                                 $sqlimage = "SELECT avatar FROM users where id='$detail'";
                                 $resultimage = mysqli_query($conn, $sqlimage);
-
                                 if($resultimage){
                                     $row = mysqli_fetch_assoc($resultimage);
                                     $imageData = $row['avatar'];
-                                    
-                                    // Display the image
-                                    echo $imageData;
-                                } else {
-                                    echo "Error retrieving image from the database.";
-                                }
+                            ?>
+                                    <!-- Display Image -->
+                                    <img src="upload/<?php echo $imageData;?>" alt="" width="250px" height="300px">
+                            <?php
+                            }
                             ?>
                         </div>
-                        <form action="edit_user.php?id=<?php echo $id; ?>" class="form-horizontal row-fluid" method="post">
+                        <form action="edit_user.php?id=<?php echo $id; ?>" class="form-horizontal row-fluid ms-5 ps-5" method="post">
                             <div class="control-group">
                                 <b><label class="form-label">Nama:</label></b>
                                 <div class="controls">

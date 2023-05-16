@@ -65,17 +65,16 @@ $row=$result->fetch_assoc();
                             <?php
                                 $sqlimage = "SELECT avatar FROM users where id='$detail'";
                                 $resultimage = mysqli_query($conn, $sqlimage);
-
                                 if($resultimage){
                                     $row = mysqli_fetch_assoc($resultimage);
                                     $imageData = $row['avatar'];
-                                    
-                                    // Display the image
-                                    echo $imageData;
-                                } else {
-                                    echo "Error retrieving image from the database.";
-                                }
                             ?>
+                                <!-- Display Image -->
+                                <img src="upload/<?php echo $imageData;?>" alt="" width="180px" height="200px">
+                                <?php 
+                                } 
+                                ?>
+                            
                         </div>
                         <div class="flex-grow-1 ms-3">
                             <h5 class="mb-1"><?php echo "<b>Nama :</b>".$name; ?></h5>

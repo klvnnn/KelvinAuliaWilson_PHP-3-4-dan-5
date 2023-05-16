@@ -138,7 +138,7 @@ include_once "koneksi.php";
                 </div>
                 <div class="mb-3">
                     <div class="controls mt-3">
-                        <button type="submit" name="submitt"class="btn btn-primary">Add Categories</button>
+                        <button type="submit" name="submitt" class="btn btn-primary">Add Categories</button>
                     </div>
                 </div>
             </div>

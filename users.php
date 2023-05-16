@@ -1,5 +1,10 @@
 <?php 
 include_once 'koneksi.php';
+session_start();
+if(!isset($_SESSION['email'])){
+    header("Location:login.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +40,7 @@ include_once 'koneksi.php';
             <li><a href="index.php">Home</a></li>
             <li><a href="#users">Users</a></li>
             <li><a href="#addusers">Add Users</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </ul>
         </nav>
     </div>
@@ -72,11 +78,10 @@ include_once 'koneksi.php';
                     $email=$row['email'];
                     $phone=$row['phone'];
                     $role=$row['role'];
-
                 ?>
                 <tr style="text-align: center;">
                     <td><?php echo $id?></td>
-                    <td><?php echo $avatar?></td>
+                    <td><img src="upload/<?php echo $avatar;?>" alt="" width="100px" height="100px"></td>
                     <td><?php echo $name?></td>
                     <td><?php echo $email?></td>
                     <td><?php echo $phone?></td>
